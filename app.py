@@ -16,7 +16,7 @@ print(train_data.dropna(axis=0))
 
 y = train_data.Survived
 
-passenger_features = ['Pclass', 'Age', 'Fare']
+passenger_features = ['Pclass', 'Age', 'Fare', 'SibSp', 'Parch']
 
 # X is standard/conventional
 X = train_data[passenger_features]
