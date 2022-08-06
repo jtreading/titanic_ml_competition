@@ -33,6 +33,13 @@ print(X.head())
 print("The predictions are")
 print(passenger_model.predict(X.head()))
 
+X_test = pd.get_dummies(test_data[passenger_features])
+
+predictions = passenger_model.predict(X_test)
+output = pd.DataFrame(
+    {'PassengerId': test_data.PassengerId, 'Survived': predictions})
+output.to_csv('submission2.csv', index=False)
+print("Your submission was successfully saved!")
 
 # women = train_data.loc[train_data.Sex == 'female']["Survived"]
 # rate_women = sum(women)/len(women)
